@@ -1,6 +1,7 @@
 name = "quick-xml"
 description = "High-performance XML reader and writer — ETNA workload."
 language = "rust"
+strategies = ["proptest", "quickcheck", "crabcheck", "hegel"]
 crate = "quick-xml"
 base_commit = "6238d8a16179d68718b43882e544ebd20982c79c"
 
