@@ -1,0 +1,13 @@
+--- a/src/escape.rs
++++ b/src/escape.rs
+@@ -174,8 +174,8 @@ where
+         // in elements of xs:lists, because those characters works as
+         // delimiters of list elements
+         b'\t' => writer.write_str("&#9;")?,
+-        b'\n' => writer.write_str("&#10;")?,
+-        b'\r' => writer.write_str("&#13;")?,
++        b'\n' => writer.write_str("&#13;")?,
++        b'\r' => writer.write_str("&#10;")?,
+         b' ' => writer.write_str("&#32;")?,
+         _ => unreachable!("Only '<', '>','\', '&', '\"', '\\t', '\\r', '\\n', and ' ' are escaped"),
+     }

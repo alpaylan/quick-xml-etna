@@ -28,6 +28,15 @@ serde = { version = ">=1.0.180", optional = true }
 tokio = { version = "1.10", optional = true, default-features = false, features = ["io-util"] }
 memchr = "2.1"
 
+# ETNA benchmark runner framework dependencies (used by src/bin/etna.rs
+# and the etna module). Placed in main [dependencies] so the bin target
+# links against them; they are only referenced from the workload harness.
+proptest = "1.0"
+quickcheck = { path = "/Users/akeles/Programming/projects/PbtBenchmark/quickcheck-rs", features = ["etna"] }
+crabcheck = { path = "/Users/akeles/Programming/projects/PbtBenchmark/crabcheck" }
+hegeltest = "0.3.7"
+rand = "0.9"
+
 [dev-dependencies]
 # msrv workflow uses `cargo check` which tries to resolve all dependencies, even
 # not used (for example, when calling `cargo check --lib` only `dependencies` is
@@ -63,7 +72,7 @@ harness = false
 path = "benches/macrobenches.rs"
 
 [features]
-default = []
+default = ["serialize"]
 
 ## Enables support for asynchronous reading and writing from `tokio`'s IO-Traits by enabling
 ## [reading events] from types implementing [`tokio::io::AsyncBufRead`].

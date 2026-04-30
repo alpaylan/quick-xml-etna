@@ -71,6 +71,8 @@ pub mod serde_helpers;
 pub mod utils;
 pub mod writer;
 
+pub mod etna;
+
 use std::borrow::Cow;
 
 // reexports

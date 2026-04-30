@@ -3,3 +3,10 @@ target
 Cargo.lock
 # macOS hidden files
 .DS_Store
+
+# ETNA runtime state
+.hegel/
+etna.log
+*.profraw
+progress.jsonl
+
