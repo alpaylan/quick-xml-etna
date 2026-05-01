@@ -16,7 +16,8 @@ prs = [743]
 summary = "After PR #739 reorganised attribute decoding around `normalized_value_with`, the entry-point method `Attribute::normalized_value` was wired to a `|_| None` resolver instead of `resolve_predefined_entity`, so the five XML predefined entity references (`&lt;`, `&gt;`, `&apos;`, `&quot;`) other than `&amp;` were rejected with `EscapeError::UnrecognizedEntity`."
 
 [tasks.injection]
-kind = "marauders"
+kind = "patch"
+patch = "patches/unescape_predef_entities_0315ed0_1.patch"
 files = ["src/events/attributes.rs"]
 locations = [{ file = "src/events/attributes.rs", line = 86, symbol = "Attribute::normalized_value" }]
 
