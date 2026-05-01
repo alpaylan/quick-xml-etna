@@ -83,13 +83,7 @@ impl<'a> Attribute<'a> {
     #[cfg(any(doc, not(feature = "encoding")))]
     pub fn normalized_value(&self, version: XmlVersion) -> XmlResult<Cow<'a, str>> {
         // resolve_predefined_entity returns only non-recursive replacements, so depth=1 is enough
-        /*| unescape_predef_entities */
         self.normalized_value_with(version, 1, resolve_predefined_entity)
-        /*|| unescape_predef_entities_0315ed0_1 */
-        /*|
-        self.normalized_value_with(version, 1, |_| None)
-        */
-        /* |*/
     }
 
     /// Returns the attribute value normalized as per [the XML specification] (or [for 1.0]),
