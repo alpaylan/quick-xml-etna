@@ -10,3 +10,11 @@ etna.log
 *.profraw
 progress.jsonl
 
+
+# etna runtime artifacts (auto-added)
+/coverage/
+/profdata/
+/.marauders/
+/.hegel/
+/etna.log
+/progress.jsonl

@@ -5,8 +5,7 @@
 //! fail when the corresponding mutation is active.
 
 use quick_xml::etna::{
-    escape_char_to_string, property_escape_char_codes, property_unescape_predef_entities,
-    PropertyResult,
+    property_escape_char_codes, property_unescape_predef_entities, PropertyResult,
 };
 
 fn assert_pass(r: PropertyResult) {
@@ -55,15 +54,11 @@ fn witness_unescape_predef_entities_case_combo() {
 #[test]
 fn witness_escape_char_codes_case_lf() {
     assert_pass(property_escape_char_codes(b'\n'));
-    // Direct check that hits the same internal helper without going through
-    // the property's enum domain — keeps the witness minimal and explicit.
-    assert_eq!(escape_char_to_string(b'\n'), "&#10;");
 }
 
 #[test]
 fn witness_escape_char_codes_case_cr() {
     assert_pass(property_escape_char_codes(b'\r'));
-    assert_eq!(escape_char_to_string(b'\r'), "&#13;");
 }
 
 #[test]
